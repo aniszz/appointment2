@@ -43,7 +43,7 @@
 
   </head>
   <body>
-	
+	  <!-- <div id="form-wrapper" style="max-width:700px;margin:auto;"> -->
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"/>
 
 <div class="navbar">
@@ -63,7 +63,10 @@
   </div>
 
 </div>
-    @yield('content')
 
+  <div class="card-header thead-light pb-3 pt-3" ><h2><font face="OldSansBlack"><center> Meeting Appointment System</center></font></h2> </div>
+
+    @yield('content')
+<!-- </div> -->
   </body>
 </html>

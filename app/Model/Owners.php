@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Owners extends Model
 {
-    //
-    protected $fillable = [
+  
+    protected $fillable  = [
+    
     	'user_name',
-		'user_company',
-		'user_mobileNo',
-		'user_email',
-	
+    	'user_company',
+    	'user_mobileNo',
+    	'user_email',
     ];
 
     protected $table = 'owners';

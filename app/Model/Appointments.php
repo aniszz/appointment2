@@ -6,15 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Appointments extends Model
 {
-        protected $fillable = [
+    protected $fillable  = [
     	
-		'subject',
-		'date',
-		'time',
-		'location',
-		'confirm',
+    	'subject',
+    	'date',
+    	'time',
+    	'location',
+    	
     ];
 
-    protected $table = 'appointments';
+   protected $table = 'appointments';
 
 }

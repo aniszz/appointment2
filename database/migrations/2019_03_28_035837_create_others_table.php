@@ -18,7 +18,9 @@ class CreateOthersTable extends Migration
             $table->string('c_name');
             $table->string('c_company');
             $table->integer('c_mobileNo');
-            $table->string('c_email')->unique();
+            $table->string('c_email');
+            //$table->integer('id')->unsigned();
+            //$table->foreign('id')->references('id')->on('owners');
             $table->timestamps();
         });
     }

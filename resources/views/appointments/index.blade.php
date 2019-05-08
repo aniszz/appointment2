@@ -8,27 +8,35 @@
 		<div class="row card">
 			<div class="col card-body">
 				<table class="table table-sm table-hover">
+
+					@foreach ($appointments as $appointment)
 					<tr>
 						<th>Subject</th>
-						<td>{{ $appointments->subject }}</td>
+						<td>{{ $appointment->subject }}</td>
 					</tr>
 					<tr>
 						<th>Date</th>
-						<td>{{ $appointments->date }}</td>
+						<td>{{ $appointment->date }}</td>
 					</tr>
-					<tr>
+					<tr> 
 						<th>Time</th>
-						<td>{{ $appointments->time }}</td>
+						<td>{{ $appointment->time }}</td>
 					</tr>
+					@endforeach
+
+					@foreach ($others as $other)
 					<tr>
 						<th>Contact Info</th>
-						<td>{{ $others->c_name }}</td>
-						<td>{{ $others->c_company }}</td>
-						<td>{{ $others->c_mobileNo }}</td>
-						<td>{{ $others->c_email }}</td>
-						<td>{{ $others->c_location }}</td>
+						<td>{{ $other->c_name }}</td>
+						<td>{{ $other->c_company }}</td>
+						<td>{{ $other->c_mobileNo }}</td>
+						<td>{{ $other->c_email }}</td>
+						<td>{{ $other->c_location }}</td>
 					</tr>
+					@endforeach
+					
 				</table>
+
 			</div>
 		</div>
 	</div>

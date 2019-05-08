@@ -19,9 +19,11 @@ class CreateAppointmentsTable extends Migration
             $table->bigIncrements('a_id');
             $table->string('subject');
             $table->integer('date');
-            $table->integer('time');
+            $table->string('time');
             $table->string('location');
             $table->boolean('confirm');
+            //$table->integer('id')->unsigned();
+            //$table->foreign('id')->references('id')->on('owners');
             $table->timestamps();
         });
     }

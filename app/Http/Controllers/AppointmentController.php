@@ -1,24 +1,28 @@
 <?php
-  
+   
 namespace App\Http\Controllers;
 use App\Model\Appointments;
 use App\Model\Owners;
 use App\Model\Others;
 use Illuminate\Http\Request;
-use App\Http\Requests\StoreRequest;
+//use App\Http\Requests\StoreRequest;
 
 
 
 class AppointmentController extends Controller
 {
+    public function appointments(){
+        $appointments = Appointments::all();
+        return view('index.appointments', compact('appointments'));
+    }   
     /**
-     * Display a listing of the resource.
+     * Display a listing of the source
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view('appointments.index', compact('appointment'));
+        return view('appointments.index');
     }
 
     /**
@@ -32,50 +36,64 @@ class AppointmentController extends Controller
     }
     /**
      * Store a newly created resource in storage
+     Store a newly crated resource in storage
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
-     */
+     */ 
     public function store(Request $request)
     {
+        $owners = Owners::create($request->all());
+        $others = Others::create($request->all());
+        $appointments = Appointments::create($request->all());
+
+
         //validate
-        $this->validate($request, [
-            'user_name' => ['required', 'string', 'min:3', 'max:255'],
-            'user_email' => ['required', 'string', 'email', 'max:255', 'unique:owners'],
-         ]);
-        $data = $request->only('user_email', 'user_name');
+        // $this->validate($request, [
+        //     'user_name' => ['required', 'string', 'min:3', 'max:255'],
+        //     'user_email' => ['required', 'string', 'email', 'max:255', 'unique:owners'],
+        //     'c_name' => ['required', 'string', 'min:3', 'max:255'],
+        //     'c_email' => ['required', 'string', 'email', 'max:255', 'unique:others'],
+        //     'subject' => ['required', 'string', 'min:3', 'max:255'],
+        //     'date' => ['required', 'date'],
+        //     'time' => ['required', 'string'],
+        //  ]);
+        //  //$data = $request->only('user_email', 'user_name', 'c_name', 'c_email', 'subject', 'time');
 
-        //store
-
-        $appointments = new Appointments();
-        $appointments->subject = $request->input('subject');
-        $appointments->date = $request->input('date');
-        $appointments->time = $request->input('time');
-        $appointments->location = $request->input('location');
-        $appointments->confirm = $request->input('confirm');
-        $appointments->save();
-
-
-        $owners = new Owners();
-        $owners->user_name = $request->input('user_name');
-        $owners->user_email = $request->input('user_email');
-        $owners->user_company = $request->input('user_company');
-        $owners->user_mobileNo = $request->input('user_mobileNo');
-        $owners->save();
+        // //store
+        // $appointments = new Appointments();
+        // $appointments->subject = $request->input('subject');
+        // $appointments->date = $request->input('date');
+        // $appointments->time = $request->input('time');
+        // $appointments->location = $request->input('location');
+        // $appointments->save();
 
 
-        $others = new Others();
-        $others->c_name = $request->input('c_name');
-        $others->c_company = $request->input('c_company');
-        $others->c_mobileNo = $request->input('c_mobileNo');
-        $others->c_email = $request->input('c_email');
-        $others->save();
+        // $owners = new Owners();
+        // $owners->user_name = $request->input('user_name');
+        // $owners->user_email = $request->input('user_email');
+        // $owners->user_company = $request->input('user_company');
+        // $owners->user_mobileNo = $request->input('user_mobileNo');
+        // $owners->save();
+
+
+        // $others = new Others();
+        // $others->c_name = $request->input('c_name');
+        // $others->c_company = $request->input('c_company');
+        // $others->c_mobileNo = $request->input('c_mobileNo');
+        // $others->c_email = $request->input('c_email');
+        // $others->save();
+
+        // $user = User::findOrFail($a_id);
+        // $user->appointments()->save($appointments);
+        // $user->owners()->save($owners);
+        // $user->others()->save($others);
+
 
         //redirect
-       // return redirect()->route('appointments.index', compact('appointment'));
-        return redirect()->back();
+        // return Redirect::to('/');
+        return redirect()->route('appointments.index');
     }
-    
     /**
      * Display the specified resources
      *
@@ -84,7 +102,7 @@ class AppointmentController extends Controller
      */
     public function show(Appointment $appointment)
     {
-        return view('appointments.show', compact('appointment'));
+        return view('appointments.show'); 
     }
     /**
      * Show the form for editing the specified resource

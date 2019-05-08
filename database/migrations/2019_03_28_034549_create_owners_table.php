@@ -18,7 +18,7 @@ class CreateOwnersTable extends Migration
             $table->string('user_name');
             $table->string('user_company');
             $table->integer('user_mobileNo');
-            $table->string('user_email')->unique();
+            $table->string('user_email');
             $table->timestamps();
         });
     }
