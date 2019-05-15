@@ -13,7 +13,8 @@ class AppointmentController extends Controller
 {
     public function appointments(){
         $appointments = Appointments::all();
-        return view('index.appointments', compact('appointments'));
+        //return view('appointments.index', compact('appointments'));
+        return view('appointments.index', $appointments);
     }   
     /**
      * Display a listing of the source
@@ -36,7 +37,7 @@ class AppointmentController extends Controller
     }
     /**
      * Store a newly created resource in storage
-     Store a newly crated resource in storage
+     * Store a newly crated resource in storage
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response

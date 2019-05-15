@@ -9,9 +9,7 @@
        
           <div class="card-body" >
             <div class="row">
-              <div class="col-sm-6">
-
-                
+              <div class="col-sm-6">   
 
                 <div class="card-header thead-light pb-2 pt-2">User's Details</div>
                 <br>
@@ -24,26 +22,6 @@
                   <label for="user_company">Company Name</label>
                   <input type="text" name="user_company" class="form-control" id="user_company" aria-describedby="user_companyHelp" placeholder="Enter your company name">
                 </div>
-
-
-
-                
-           <!--     <div>
-                <label for="user_officeAddress">Office Address</label>
-                <input type="text" name="user_officeAddress" class="form-control" id="user_officeAddress" aria-describedby="user_officeAddressHelp" placeholder="Enter user's office address"></div>
-
-              <div class="form-group">
-                <label for="user_address">Address</label>
-                <input type="text" name="user_address" class="form-control" id="user_address" aria-describedby="user_addressHelp" placeholder="Enter user's address"></div>
-
-              <div class="form-group">
-                <label for="user_description">Description</label>
-                <input type="text" name="user_description" class="form-control" id="user_descritpion" aria-describedby="user_description" placeholder="Enter user's description"></div>
-
-              <div class="form-group"><label for="user_officeNo">Office Number</label><input type="integer" name="user_officeNo" class="form-control" id="user_officeNo" ></div>
- -->
-
-
 
                 <div class="form-group">
                   <label for="user_mobileNo">Mobile Number</label>
@@ -87,7 +65,7 @@
                   <input type="text" name="subject"  class="form-control" id="subject" aria-describedby="subjectHelp" placeholder="Enter subject of meeting">
                 </div>
 
-                <div>
+                <div class="form-group">
                   <label for="date">Date</label>
                   <input type="date" name="date" id="date" class="form-control">
                 </div>

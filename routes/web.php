@@ -19,9 +19,10 @@ Route::get('/', function () {
 //Route::get('/create', function () {
 //    return view('create');
 //});
+
 Route::get('appindex', function () {
     return view('appointments.index');
-});
+ });
 
 Route::resource('appointments', 'AppointmentController');
 
